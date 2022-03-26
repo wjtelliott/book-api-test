@@ -1,4 +1,5 @@
-const express = require('express'),
+const
+    express = require('express'),
     app = express(),
     mongoose = require('mongoose');
 
@@ -19,4 +20,4 @@ app.put('*', (req, res) => res.status(404).json('Unknown PUT endpoint'));
 app.delete('*', (req, res) => res.status(404).json('Unknown DELETE endpoint'));
 
 app.listen(process.env.PORT, 
-    () => console.log('Server is listening'));
+    () => console.log('Server is listening!'));

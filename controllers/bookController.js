@@ -1,4 +1,5 @@
-const router = require('express').Router(),
+const
+    router = require('express').Router(),
     bookSchema = require('../models/bookSchema');
 
 router.get('/seed', async (req, res) => {
@@ -69,7 +70,6 @@ router.put('/:id', (req, res) => {
             //? Do we have to do another call here? Why can't the above 'then' give us the new data?
             bookSchema.findById(req.params.id)
                 .then(newData => res.status(200).json(newData))
-                .catch(err => res.status(400).json({'message': 'Error', 'error': err.message}))
         })
         .catch(err => res.status(400).json({'message': 'Update Failed', 'error': err.message}));
 });
